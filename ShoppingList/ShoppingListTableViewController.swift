@@ -32,6 +32,7 @@ class ShoppingTableViewController: UITableViewController {
         
         self.navigationItem.title = "쇼핑"
         setAddView()
+        addShoppingListButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
     }
 }
 
@@ -50,7 +51,33 @@ extension ShoppingTableViewController {
         
         setShoppingListView(cell: cell)
         
+        cell.shoppingItemLabel?.text = shoppingList[indexPath.row].shoppingItem
+        
         return cell
+    }
+    
+    func addShoppingList() {
+        guard let inputText = addShoppingListTextField.text, !inputText.isEmpty else {
+            addShoppingListTextField.placeholder = " 😞 아이템이 입력되지 않았어요."
+            return
+        }
+        
+        shoppingList.append(Shopping(isCompleted: false, shoppingItem: inputText, isBookmarked: false))
+        addShoppingListTextField.text = nil
+        addShoppingListTextField.placeholder = " 🛒 쇼핑할 아이템을 추가해 보세요!"
+    }
+}
+
+// MARK: - Touch Event
+extension ShoppingTableViewController {
+    @objc func addButtonClicked() {
+        addShoppingList()
+        tableView.reloadData()
+    }
+    
+    @IBAction func enterClicked(_ sender: UITextField) {
+        addShoppingList()
+        tableView.reloadData()
     }
 }
 
