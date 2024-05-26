@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mkq-0Z-bfE">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,7 +40,7 @@
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="Button"/>
                                             <connections>
-                                                <action selector="keyboardDismiss:" destination="00U-Yd-IdG" eventType="touchUpInside" id="L9B-8L-qAi"/>
+                                                <action selector="keyboardDismiss:" destination="00U-Yd-IdG" eventType="touchUpInside" id="Gv1-2F-81l"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -70,6 +71,9 @@
                                                     <rect key="frame" x="314" y="11" width="30" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <connections>
+                                                        <action selector="keyboardDismiss:" destination="00U-Yd-IdG" eventType="touchUpInside" id="znD-AV-d0V"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mv6-Zg-44g">
                                                     <rect key="frame" x="18" y="8" width="36" height="35"/>
@@ -78,13 +82,13 @@
                                                     <state key="normal">
                                                         <imageReference key="image" image="checkmark.square.fill" catalog="system" symbolScale="default"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="keyboardDismiss:" destination="00U-Yd-IdG" eventType="touchUpInside" id="iyW-S2-D17"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <gestureRecognizers/>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="69m-JA-BpM" appends="YES" id="Swx-Om-IO1"/>
-                                            </connections>
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -105,11 +109,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2r-Ln-Ife" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="69m-JA-BpM">
-                    <connections>
-                        <action selector="keyboardDismiss:" destination="00U-Yd-IdG" id="ddP-jj-5L6"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="535" y="144"/>
         </scene>

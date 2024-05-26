@@ -99,6 +99,10 @@ extension ShoppingTableViewController {
         addShoppingList()
         tableView.reloadData()
     }
+    
+    @IBAction func keyboardDismiss(_ sender: Any) {
+        view.endEditing(true)
+    }
 }
 
 // MARK: - UI Setting
