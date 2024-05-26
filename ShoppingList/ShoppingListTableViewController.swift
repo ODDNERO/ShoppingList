@@ -103,6 +103,23 @@ extension ShoppingTableViewController {
     @IBAction func keyboardDismiss(_ sender: Any) {
         view.endEditing(true)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presentAlert(title: "목록에서 삭제할까요?", message: nil, indexPath: indexPath)
+    }
+    
+    func presentAlert(title: String, message: String?, indexPath: IndexPath) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let remove = UIAlertAction(title: "삭제", style: .destructive) { _ in
+            self.shoppingList.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+
+        alert.addAction(cancel)
+        alert.addAction(remove)
+        present(alert, animated: true)
+    }
 }
 
 // MARK: - UI Setting
