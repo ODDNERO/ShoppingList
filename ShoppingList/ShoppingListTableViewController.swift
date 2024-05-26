@@ -53,6 +53,16 @@ extension ShoppingTableViewController {
         
         cell.shoppingItemLabel?.text = shoppingList[indexPath.row].shoppingItem
         
+        cell.checkButton.tag = indexPath.row
+        cell.checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
+        let checkButtonImageName = shoppingList[indexPath.row].isCompleted ? "checkmark.square.fill" : "checkmark.square"
+        cell.checkButton.setImage(UIImage(systemName: checkButtonImageName), for: .normal)
+        
+        cell.bookmarkButton.tag = indexPath.row
+        cell.bookmarkButton.addTarget(self, action: #selector(bookmarkButtonClicked), for: .touchUpInside)
+        let bookmarkButtonImageName = shoppingList[indexPath.row].isBookmarked ? "star.fill" : "star"
+        cell.bookmarkButton.setImage(UIImage(systemName: bookmarkButtonImageName), for: .normal)
+        
         return cell
     }
     
@@ -73,6 +83,16 @@ extension ShoppingTableViewController {
     @objc func addButtonClicked() {
         addShoppingList()
         tableView.reloadData()
+    }
+    
+    @objc func checkButtonClicked(sender: UIButton) {
+        shoppingList[sender.tag].isCompleted.toggle()
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
+    }
+    
+    @objc func bookmarkButtonClicked(sender: UIButton) {
+        shoppingList[sender.tag].isBookmarked.toggle()
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
     
     @IBAction func enterClicked(_ sender: UITextField) {
