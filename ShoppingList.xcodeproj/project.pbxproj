@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE127B382C0B5C570062EA2A /* UITableViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE127B372C0B5C570062EA2A /* UITableViewController+.swift */; };
 		CE693F202C039B8000B77A20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693F1F2C039B8000B77A20 /* AppDelegate.swift */; };
 		CE693F222C039B8000B77A20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE693F212C039B8000B77A20 /* SceneDelegate.swift */; };
 		CE693F272C039B8000B77A20 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE693F262C039B8000B77A20 /* Base */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE127B372C0B5C570062EA2A /* UITableViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+.swift"; sourceTree = "<group>"; };
 		CE693F1C2C039B8000B77A20 /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE693F1F2C039B8000B77A20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE693F212C039B8000B77A20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				CE693F1F2C039B8000B77A20 /* AppDelegate.swift */,
 				CE693F212C039B8000B77A20 /* SceneDelegate.swift */,
+				CE127B372C0B5C570062EA2A /* UITableViewController+.swift */,
 				CE693F332C039BEB00B77A20 /* ShoppingListTableViewController.swift */,
 				CE693F252C039B8000B77A20 /* Main.storyboard */,
 				CE693F282C039B8300B77A20 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			files = (
 				CE693F202C039B8000B77A20 /* AppDelegate.swift in Sources */,
 				CE693F222C039B8000B77A20 /* SceneDelegate.swift in Sources */,
+				CE127B382C0B5C570062EA2A /* UITableViewController+.swift in Sources */,
 				CE693F342C039BEB00B77A20 /* ShoppingListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CHY8M792C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShoppingList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -324,6 +329,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CHY8M792C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShoppingList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
