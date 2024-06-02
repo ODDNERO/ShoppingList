@@ -25,7 +25,9 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet var addShoppingListTextField: UITextField!
     @IBOutlet var addShoppingListButton: UIButton!
     
-    var shoppingList: [Shopping] = []
+    var shoppingList: [Shopping] = [] {
+        didSet { tableView.reloadData() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +84,6 @@ extension ShoppingTableViewController {
 extension ShoppingTableViewController {
     @objc func addButtonClicked() {
         addShoppingList()
-        tableView.reloadData()
     }
     
     @objc func checkButtonClicked(sender: UIButton) {
@@ -97,7 +98,6 @@ extension ShoppingTableViewController {
     
     @IBAction func enterClicked(_ sender: UITextField) {
         addShoppingList()
-        tableView.reloadData()
     }
     
     @IBAction func keyboardDismiss(_ sender: Any) {
@@ -107,7 +107,6 @@ extension ShoppingTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presentAlert(title: "목록에서 삭제할까요?", message: nil) {
             self.shoppingList.remove(at: indexPath.row)
-            tableView.reloadData()
         }
     }
 }
