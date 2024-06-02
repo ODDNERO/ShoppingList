@@ -105,7 +105,10 @@ extension ShoppingTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentAlert(title: "목록에서 삭제할까요?", message: nil, indexPath: indexPath, list: shoppingList)
+        presentAlert(title: "목록에서 삭제할까요?", message: nil) {
+            self.shoppingList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
 }
 
